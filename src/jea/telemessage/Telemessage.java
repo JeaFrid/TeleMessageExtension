@@ -19,5 +19,12 @@ public class Telemessage extends AndroidNonvisibleComponent {
 
     return HTTPS+BotToken+HTTPS2+UserID+HTTPS3+Message;
   }
+   @SimpleFunction(description = "Send a photo to any user from the Telegram bot. (The image must be a direct link.)")
+  public String SendPhoto(String BotToken, String UserID, String PhotoURL){
+     String HTTPS = "https://api.telegram.org/bot";
+     String HTTPS2 = "/sendphoto?chat_id=";
+     String HTTPS3 = "&photo=";
 
+     return HTTPS+BotToken+HTTPS2+UserID+HTTPS3+PhotoURL;
+   }
 }
